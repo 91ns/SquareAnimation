@@ -14,11 +14,14 @@ public class LightWallAdapter extends BaseAdapter {
     private Context mContext;
     private List<String> colors;
     private int height;
+    String [] lights;
 
-    public LightWallAdapter(Context c, List<String> colors, int height) {
+
+    public LightWallAdapter(Context c, List<String> colors, int height, String [] lights) {
         mContext = c;
         this.colors = colors;
         this.height = height;
+        this.lights = lights;
     }
 
     public int getCount() {
@@ -53,7 +56,7 @@ public class LightWallAdapter extends BaseAdapter {
 
     private void animateColor(final ImageView imageView, final Random random) {
         imageView.setAlpha(0f);
-        imageView.setBackgroundColor(Color.parseColor(colors.get(random.nextInt(colors.size()))));
+        imageView.setBackgroundColor(Color.parseColor(lights[random.nextInt(lights.length)]));
 
         final int delay = random.nextInt(10);
         imageView.animate().alpha(1).setDuration(500).setStartDelay(100 * delay)
