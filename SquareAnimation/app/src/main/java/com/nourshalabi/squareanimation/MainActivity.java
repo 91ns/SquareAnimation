@@ -15,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
         LightWall lightWall = findViewById(R.id.lightWall);
 
         String[] lights = new String[]{"#2f0727", "#854277", "#c192b8", "#f1d0ee", "#da81af"};
+        String[] lights2 = new String[]{"#9d382b", "#cc8593", "#ebccd4", "#e3d9df", "#fdfafb"};
 
-        lightWall.animateLightWall(20, lights);
+        lightWall.animateLightWall(6, lights2);
 
     }
 }
